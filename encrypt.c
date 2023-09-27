@@ -7,7 +7,7 @@ void encrypted_from_plain(int* y, int* x, const key K, int depth) {
         spin_key(S,i);
         encoded_from_plain(z[(i+1)%2],z[i%2],K);
         reverse_text(z[(i+1)%2]);
-        if (demo) print_text(z[(i+1)%2]);
+        if (demo_mode_flag) print_text(z[(i+1)%2]);
     }
     copy_text(z[depth%2],y);
 }
@@ -20,7 +20,7 @@ void plain_from_encrypted(int* y, int* x, const key K, int depth) {
         spin_key(S,i);
         reverse_text(z[i%2]);
         plain_from_encoded(z[(i+1)%2],z[i%2],K);
-        if (demo) print_text(z[(i+1)%2]);
+        if (demo_mode_flag) print_text(z[(i+1)%2]);
     }
     copy_text(z[depth%2],y);
 }

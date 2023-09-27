@@ -1,18 +1,19 @@
 void demonstrate_system() {
-    demo = true;
+    //demo_mode_flag = true;
     srand(time(NULL));
     key K;cut_key(K);print_key(K);
-    int depth = 10;
+
     int p[text_length] = {0};
     int c[text_length] = {0};
     int d[text_length] = {0};
     randomize_text(p);
-    print_text(p); printf("\n");print_text(p);
+    print_text(p);//printf("\n");
+    //print_text(p); printf("\n");print_text(p);
     encrypted_from_plain(c, p, K, depth);
-    printf("\n");
-    print_text(c);
-    plain_from_encrypted(d, c, K, depth); printf("\n");
-    print_text(d); 
+    //printf("\n");
+    print_text(c);//printf("\n");
+    plain_from_encrypted(d, c, K, depth); //printf("\n");
+    print_text(d); printf("\n");
     if (text_eq(p,d)) printf("SUCCESSFUL DECRYPTION (DEPTH = %i) \n",depth);
     else printf("DECRYPTION FAILED (DEPTH = %i) \n",depth);
 }

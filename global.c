@@ -1,10 +1,11 @@
-const int R = 64;
-const int C = 64;
-const int S = 4;
-const int B = 16;//should == 2^S
+const int R = 32;
+const int C = 32;
+const int S = 3;//size (length) of bit segments
+const int B = 8;//base, symbols in alphabet, should == 2^S
 const int text_length = 51; 
 const int search_max = 1000;
-bool demo = true;
+int depth = 150;
+bool demo_mode_flag = false;
 
 typedef int list[R*C];
 typedef int key[R][C];
